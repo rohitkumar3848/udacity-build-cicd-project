@@ -1,9 +1,17 @@
 name: Backend Continuous Integration
 
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - "starter/backend/**"
+      - "setup/terraform/**"
+      - ".github/workflows/backend-ci.yaml"
+
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - "starter/backend/**"
       - "setup/terraform/**"
@@ -39,6 +47,7 @@ jobs:
   test:
     name: Test Backend
     runs-on: ubuntu-latest
+    needs: lint
 
     steps:
       - name: Checkout code

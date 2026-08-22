@@ -1,13 +1,22 @@
 name: Backend Continuous Integration
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - master
     paths:
       - "starter/backend/**"
       - "setup/terraform/**"
       - ".github/workflows/backend-ci.yaml"
+
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "starter/backend/**"
+      - "setup/terraform/**"
+      - ".github/workflows/backend-ci.yaml"
+
   workflow_dispatch:
 
 jobs:
