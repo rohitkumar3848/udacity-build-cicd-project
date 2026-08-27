@@ -57,7 +57,7 @@ jobs:
         working-directory: starter/frontend
         run: CI=true npm test
 
-    build:
+  build:
     name: Build Frontend
     runs-on: ubuntu-latest
 
